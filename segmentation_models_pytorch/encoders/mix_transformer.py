@@ -465,8 +465,7 @@ class MixVisionTransformerEncoder(MixVisionTransformer, EncoderMixin):
         raise ValueError("MixVisionTransformer encoder does not support dilated mode")
 
     def set_in_channels(self, in_channels, *args, **kwargs):
-        if in_channels != 3:
-            raise ValueError("MixVisionTransformer encoder does not support in_channels setting other than 3")
+        self._in_channels = in_channels
 
     def forward(self, x):
 
